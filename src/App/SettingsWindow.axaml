@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="LogseqGitLauncher.SettingsWindow"
+        Title="Settings"
+        Icon="/Assets/icon.png"
+        Width="600" SizeToContent="Height" CanResize="False"
+        WindowDecorations="None"
+        Background="Transparent"
+        TransparencyLevelHint="Transparent"
+        WindowStartupLocation="CenterOwner">
+  <Border Name="Card" Margin="16" CornerRadius="22" BorderThickness="1"
+          BorderBrush="{StaticResource CardBorderBrush}"
+          Background="{StaticResource CardBrush}"
+          BoxShadow="0 8 28 0 #99000000">
+    <StackPanel Margin="24,20,24,24" Spacing="6">
+      <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,8">
+        <TextBlock Text="Settings" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Center"
+                   Foreground="{StaticResource TextBrush}" />
+        <Button Name="CloseButton" Grid.Column="1" Classes="round danger" ToolTip.Tip="Close">
+          <Path Data="M0,0 L11,11 M11,0 L0,11" Stroke="#F0A0AE" StrokeThickness="2" StrokeLineCap="Round" />
+        </Button>
+      </Grid>
+
+      <TextBlock Text="GRAPH FOLDER (GIT REPOSITORY)" FontSize="11" Foreground="{StaticResource MutedBrush}" />
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBox Name="GraphBox" />
+        <Button Name="BrowseGraph" Grid.Column="1" Classes="pill" Content="Browse" Margin="8,0,0,0" />
+      </Grid>
+
+      <TextBlock Name="LogseqLabel" Text="LOGSEQ" FontSize="11" Margin="0,12,0,0"
+                 Foreground="{StaticResource MutedBrush}" />
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBox Name="LogseqBox" />
+        <Button Name="BrowseLogseq" Grid.Column="1" Classes="pill" Content="Browse" Margin="8,0,0,0" />
+      </Grid>
+
+      <TextBlock Name="MessageText" TextWrapping="Wrap" Margin="0,12,0,0" MinHeight="20" FontSize="12" />
+
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,12,0,0">
+        <Button Name="CancelButton" Classes="pill" Content="Cancel" IsCancel="True" />
+        <Button Name="SaveButton" Classes="pill accent" Content="Save" IsDefault="True" />
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

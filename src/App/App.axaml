@@ -1,0 +1,97 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LogseqGitLauncher.App"
+             RequestedThemeVariant="Dark">
+  <Application.Resources>
+    <LinearGradientBrush x:Key="CardBrush" StartPoint="0%,0%" EndPoint="100%,100%">
+      <GradientStop Offset="0" Color="#1D1A35" />
+      <GradientStop Offset="1" Color="#0E0D19" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="CardBorderBrush">#2B2850</SolidColorBrush>
+    <SolidColorBrush x:Key="TextBrush">#EDEBFA</SolidColorBrush>
+    <SolidColorBrush x:Key="MutedBrush">#8A87A8</SolidColorBrush>
+    <SolidColorBrush x:Key="AccentBrush">#14B8A6</SolidColorBrush>
+
+    <!-- Make Fluent's text boxes match the dark card. -->
+    <SolidColorBrush x:Key="TextControlBackground">#17152B</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver">#1B1932</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBackgroundFocused">#17152B</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBorderBrush">#2B2850</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBorderBrushPointerOver">#3D3A6B</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlBorderBrushFocused">#14B8A6</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlForeground">#EDEBFA</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlForegroundPointerOver">#EDEBFA</SolidColorBrush>
+    <SolidColorBrush x:Key="TextControlForegroundFocused">#EDEBFA</SolidColorBrush>
+  </Application.Resources>
+
+  <Application.Styles>
+    <FluentTheme />
+
+    <!-- Round icon buttons -->
+    <Style Selector="Button.round">
+      <Setter Property="Width" Value="36" />
+      <Setter Property="Height" Value="36" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="18" />
+      <Setter Property="Background" Value="#26233F" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style Selector="Button.round:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#36325E" />
+    </Style>
+    <Style Selector="Button.round.primary">
+      <Setter Property="Width" Value="44" />
+      <Setter Property="Height" Value="44" />
+      <Setter Property="CornerRadius" Value="22" />
+      <Setter Property="Background" Value="#14B8A6" />
+    </Style>
+    <Style Selector="Button.round.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#1ED3BE" />
+    </Style>
+    <Style Selector="Button.round.danger">
+      <Setter Property="Background" Value="#33202B" />
+    </Style>
+    <Style Selector="Button.round.danger:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#5A2635" />
+    </Style>
+
+    <!-- Pill text buttons -->
+    <Style Selector="Button.pill">
+      <Setter Property="CornerRadius" Value="18" />
+      <Setter Property="Padding" Value="20,8" />
+      <Setter Property="Background" Value="#26233F" />
+      <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style Selector="Button.pill:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#36325E" />
+    </Style>
+    <Style Selector="Button.pill.accent">
+      <Setter Property="Background" Value="#14B8A6" />
+      <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="Button.pill.accent:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#1ED3BE" />
+    </Style>
+    <Style Selector="Button.pill.accent:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="#1B4A47" />
+      <Setter Property="Foreground" Value="#6F8F8C" />
+    </Style>
+
+    <Style Selector="TextBox">
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Padding" Value="12,8" />
+    </Style>
+
+    <!-- Status ring spins while work is in progress. -->
+    <Style Selector="Arc.spin">
+      <Style.Animations>
+        <Animation Duration="0:0:1.1" IterationCount="Infinite">
+          <KeyFrame Cue="0%"><Setter Property="RotateTransform.Angle" Value="0" /></KeyFrame>
+          <KeyFrame Cue="100%"><Setter Property="RotateTransform.Angle" Value="360" /></KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+  </Application.Styles>
+</Application>

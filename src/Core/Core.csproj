@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>LogseqGitLauncher.Core</RootNamespace>
+    <AssemblyName>LogseqGitLauncher.Core</AssemblyName>
+  </PropertyGroup>
+</Project>

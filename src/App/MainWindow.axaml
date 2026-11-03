@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="LogseqGitLauncher.MainWindow"
+        Title="Logseq Git Launcher"
+        Icon="/Assets/icon.png"
+        Width="600" SizeToContent="Height" CanResize="False"
+        WindowDecorations="None"
+        Background="Transparent"
+        TransparencyLevelHint="Transparent"
+        WindowStartupLocation="CenterScreen">
+  <!-- The outer margin leaves room for the card's shadow. -->
+  <Border Name="Card" Margin="16" CornerRadius="22" BorderThickness="1"
+          BorderBrush="{StaticResource CardBorderBrush}"
+          Background="{StaticResource CardBrush}"
+          BoxShadow="0 8 28 0 #99000000">
+    <StackPanel>
+      <Grid ColumnDefinitions="Auto,*,Auto" Margin="22,18">
+        <Grid Width="48" Height="48" VerticalAlignment="Center">
+          <Ellipse Stroke="#2A2750" StrokeThickness="4" />
+          <Arc Name="Ring" Width="48" Height="48" StrokeThickness="4" StrokeLineCap="Round"
+               StartAngle="-90" SweepAngle="100" Stroke="#14B8A6" RenderTransform="rotate(0deg)" />
+        </Grid>
+
+        <StackPanel Grid.Column="1" Margin="16,0,12,0" VerticalAlignment="Center" Spacing="2">
+          <TextBlock Name="TitleText" Text="Starting" FontSize="24" FontWeight="SemiBold"
+                     Foreground="{StaticResource TextBrush}" TextTrimming="CharacterEllipsis" />
+          <TextBlock Name="SubtitleText" Text="" FontSize="12" TextWrapping="Wrap"
+                     Foreground="{StaticResource MutedBrush}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <Button Name="DetailsButton" Classes="round" ToolTip.Tip="Show details">
+            <Path Name="Chevron" Data="M0,0 L6,6 L12,0" Stroke="#CFCCEB" StrokeThickness="2"
+                  StrokeLineCap="Round" StrokeJoin="Round" RenderTransform="scaleY(1)" />
+          </Button>
+          <Button Name="SettingsButton" Classes="round" ToolTip.Tip="Settings">
+            <Path Data="M0,3 L14,3 M0,11 L14,11 M9,0 L9,6 M4,8 L4,14" Stroke="#CFCCEB"
+                  StrokeThickness="2" StrokeLineCap="Round" />
+          </Button>
+          <Button Name="MinimizeButton" Classes="round" ToolTip.Tip="Minimize">
+            <Path Data="M0,0 L12,0" Stroke="#CFCCEB" StrokeThickness="2" StrokeLineCap="Round" />
+          </Button>
+          <Button Name="RetryButton" Classes="round primary" IsVisible="False" ToolTip.Tip="Retry">
+            <Path Data="M0,0 L11,6.5 L0,13 Z" Fill="White" Margin="3,0,0,0" />
+          </Button>
+          <Button Name="CloseButton" Classes="round danger" ToolTip.Tip="Close">
+            <Path Data="M0,0 L11,11 M11,0 L0,11" Stroke="#F0A0AE" StrokeThickness="2"
+                  StrokeLineCap="Round" />
+          </Button>
+        </StackPanel>
+      </Grid>
+
+      <Border Name="LogPanel" IsVisible="False" Margin="22,0,22,22" CornerRadius="12"
+              Background="#12101F" BorderBrush="#26233F" BorderThickness="1" Padding="4">
+        <TextBox Name="LogBox" Height="200" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap"
+                 Background="Transparent" BorderThickness="0"
+                 FontFamily="Cascadia Mono,Consolas,Menlo,monospace" FontSize="12" />
+      </Border>
+    </StackPanel>
+  </Border>
+</Window>
