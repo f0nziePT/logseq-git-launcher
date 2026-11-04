@@ -149,10 +149,11 @@ public partial class MainWindow : Window
             State.Editing => Violet,
             _ => Teal,
         };
+        // A full ring for a settled state; a short arc that rotates while busy.
         var spinning = state == State.Busy;
-        Ring.Classes.Set("spin", spinning);
-        // A full circle for a settled state; a short arc that rotates while busy.
-        Ring.SweepAngle = spinning ? 100 : state == State.Editing ? 270 : 359.9;
+        Spinner.IsVisible = spinning;
+        Spinner.Classes.Set("spin", spinning);
+        Ring.IsVisible = !spinning;
     }
 
     private void ShowDetails(bool show)

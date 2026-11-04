@@ -67,14 +67,14 @@
     <Style Selector="Button.pill:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="#36325E" />
     </Style>
-    <Style Selector="Button.pill.accent">
+    <Style Selector="Button.pill.cta">
       <Setter Property="Background" Value="#14B8A6" />
       <Setter Property="Foreground" Value="White" />
     </Style>
-    <Style Selector="Button.pill.accent:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Style Selector="Button.pill.cta:pointerover /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="#1ED3BE" />
     </Style>
-    <Style Selector="Button.pill.accent:disabled /template/ ContentPresenter#PART_ContentPresenter">
+    <Style Selector="Button.pill.cta:disabled /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="#1B4A47" />
       <Setter Property="Foreground" Value="#6F8F8C" />
     </Style>

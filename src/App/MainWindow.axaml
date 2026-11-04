@@ -17,7 +17,8 @@
       <Grid ColumnDefinitions="Auto,*,Auto" Margin="22,18">
         <Grid Width="48" Height="48" VerticalAlignment="Center">
           <Ellipse Stroke="#2A2750" StrokeThickness="4" />
-          <Arc Name="Ring" Width="48" Height="48" StrokeThickness="4" StrokeLineCap="Round"
+          <Ellipse Name="Ring" Stroke="#14B8A6" StrokeThickness="4" IsVisible="False" />
+          <Arc Name="Spinner" Width="48" Height="48" StrokeThickness="4" StrokeLineCap="Round"
                StartAngle="-90" SweepAngle="100" Stroke="#14B8A6" RenderTransform="rotate(0deg)" />
         </Grid>
 

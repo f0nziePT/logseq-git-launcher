@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using LogseqGitLauncher.Core;
@@ -32,6 +33,12 @@ public partial class SettingsWindow : Window
                 BeginMoveDrag(e);
         };
         CloseButton.Click += (_, _) => Close(false);
+        // Enter saves and Escape cancels (done by hand: Fluent restyles the default and cancel buttons).
+        KeyDown += (_, e) =>
+        {
+            if (e.Key == Key.Enter) Save();
+            else if (e.Key == Key.Escape) Close(false);
+        };
         GraphBox.Text = settings.GraphPath;
         LogseqBox.Text = string.IsNullOrWhiteSpace(settings.LogseqPath)
             ? platform.DetectLogseq() ?? ""
